@@ -1,0 +1,134 @@
+﻿<<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Таблиця</title>
+    <style>
+        /* Базові стилі */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 40px;
+            background-color: #f0f0f0;
+        }
+
+        /* Контейнер для таблиці */
+        .table-container {
+            overflow-x: auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        /* Стилізація таблиці */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            min-width: 600px;
+            background-color: white;
+        }
+
+        /* Заголовки */
+        .styled-table thead tr {
+            background-color: #2c3e50;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+
+        /* Клітинки */
+        .styled-table th,
+        .styled-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        /* Рядки */
+        .styled-table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .styled-table tbody tr:hover {
+            background-color: #e9ecef;
+            transition: background-color 0.3s;
+        }
+
+        /* Спеціальні класи */
+        .status-active {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .status-inactive {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Підвал таблиці */
+        .styled-table tfoot {
+            background-color: #34495e;
+            color: white;
+        }
+
+        /* Капішн */
+        .table-caption {
+            caption-side: bottom;
+            padding: 10px;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+
+        /* Адаптивність */
+        @media (max-width: 768px) {
+            .styled-table {
+                font-size: 14px;
+            }
+            
+            .styled-table th,
+            .styled-table td {
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table class="styled-table">
+            <caption class="table-caption">Дані оновлені 15 липня 2023 року</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ім'я</th>
+                    <th>Ел. пошта</th>
+                    <th>Статус</th>
+                    <th>Баланс</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Іван Петренко</td>
+                    <td>ivan@example.com</td>
+                    <td class="status-active">Активний</td>
+                    <td>₴1,250.50</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Марія Сидоренко</td>
+                    <td>maria@example.com</td>
+                    <td class="status-inactive">Неактивний</td>
+                    <td>₴850.00</td>
+                </tr>
+                <!-- Додайте більше рядків за потребою -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Загальний баланс</td>
+                    <td>₴2,100.50</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>
